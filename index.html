@@ -134,6 +134,90 @@
     }
     .guide ol { padding-left: 18px; font-size: 14px; color: #cbd5e1; }
     .guide li + li { margin-top: 8px; }
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 12px;
+    }
+    .p-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 15px 14px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .p-card:hover, .p-card.active {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      background: #142038;
+    }
+    .p-card .p-name { font-size: 14px; font-weight: 700; color: #e2e8f0; }
+    .p-card .p-val { font-size: 20px; font-weight: 800; color: var(--gold); margin: 6px 0 4px; }
+    .p-card .p-note { font-size: 12px; color: var(--muted); }
+    .p-tag {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      background: rgba(34, 197, 94, 0.16);
+      color: #4ade80;
+    }
+    .promo-banner {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.14), rgba(56, 189, 248, 0.12));
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      font-size: 13.5px;
+      color: #fde68a;
+    }
+    .order-box {
+      margin-top: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      align-items: end;
+    }
+    .field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+    .field input, .field select {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: #0a101d;
+      color: var(--text);
+      font-size: 13.5px;
+      outline: none;
+    }
+    .field input:focus, .field select:focus { border-color: var(--blue); }
+    .btn-order {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .order-out {
+      grid-column: 1 / -1;
+      font-size: 13px;
+      color: #cbd5e1;
+      background: #0a101d;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: none;
+    }
     code {
       background: rgba(56, 189, 248, 0.12);
       color: var(--blue);
@@ -182,6 +266,90 @@
     </div>
 
     <div class="section">
+      <h2>💎 Bảng Giá &amp; Gói KEY (Test 3 Ngày Miễn Phí)</h2>
+      <div class="price-grid" id="pkgGrid">
+        <div class="p-card" data-pkg="Test 3 Ngày (Miễn phí)">
+          <div class="p-name">Dùng Thử</div>
+          <div class="p-val">0đ</div>
+          <div class="p-note">Test full 3 ngày</div>
+          <span class="p-tag">Miễn phí</span>
+        </div>
+        <div class="p-card" data-pkg="1 Acc / Tháng — 30.000đ">
+          <div class="p-name">Gói 1 Acc</div>
+          <div class="p-val">30.000đ</div>
+          <div class="p-note">1 tháng • 1 nhân vật</div>
+        </div>
+        <div class="p-card" data-pkg="5 Acc / Tháng — 100.000đ">
+          <div class="p-name">Gói 5 Acc</div>
+          <div class="p-val">100.000đ</div>
+          <div class="p-note">1 tháng • Tối đa 5 acc</div>
+        </div>
+        <div class="p-card" data-pkg="Không giới hạn 1 Tháng — 200.000đ">
+          <div class="p-name">Full 1 Tháng</div>
+          <div class="p-val">200.000đ</div>
+          <div class="p-note">Không giới hạn nick</div>
+        </div>
+        <div class="p-card" data-pkg="Không giới hạn 3 Tháng — 400.000đ">
+          <div class="p-name">Full 3 Tháng</div>
+          <div class="p-val">400.000đ</div>
+          <div class="p-note">Không giới hạn nick</div>
+        </div>
+        <div class="p-card" data-pkg="Không giới hạn 6 Tháng — 700.000đ">
+          <div class="p-name">Full 6 Tháng</div>
+          <div class="p-val">700.000đ</div>
+          <div class="p-note">Không giới hạn nick</div>
+          <span class="p-tag">Hoa hồng 10%</span>
+        </div>
+        <div class="p-card" data-pkg="Không giới hạn 12 Tháng — 1.200.000đ">
+          <div class="p-name">Full 12 Tháng</div>
+          <div class="p-val">1.200.000đ</div>
+          <div class="p-note">Không giới hạn nick</div>
+          <span class="p-tag">Hoa hồng 10%</span>
+        </div>
+        <div class="p-card active" data-pkg="Full Vĩnh Viễn — 2.000.000đ">
+          <div class="p-name">Full Vĩnh Viễn</div>
+          <div class="p-val">2.000.000đ</div>
+          <div class="p-note">Không giới hạn nick</div>
+          <span class="p-tag">Hoa hồng 10%</span>
+        </div>
+      </div>
+
+      <div class="promo-banner">
+        🎁 <strong>Ưu đãi giới thiệu:</strong> Anh em giới thiệu khách mới nhận ngay <strong>10% hoa hồng</strong> (áp dụng cho các gói từ <strong>6 tháng trở lên</strong>: 6 tháng, 12 tháng, Vĩnh viễn).
+      </div>
+
+      <div class="order-box">
+        <div class="field">
+          <label>Chọn gói KEY</label>
+          <select id="pkgSel">
+            <option value="Test 3 Ngày (Miễn phí)">Test 3 Ngày (Miễn phí)</option>
+            <option value="1 Acc / Tháng — 30.000đ">1 Acc / Tháng — 30.000đ</option>
+            <option value="5 Acc / Tháng — 100.000đ">5 Acc / Tháng — 100.000đ</option>
+            <option value="Không giới hạn 1 Tháng — 200.000đ">Không giới hạn 1 Tháng — 200.000đ</option>
+            <option value="Không giới hạn 3 Tháng — 400.000đ">Không giới hạn 3 Tháng — 400.000đ</option>
+            <option value="Không giới hạn 6 Tháng — 700.000đ">Không giới hạn 6 Tháng — 700.000đ (HH 10%)</option>
+            <option value="Không giới hạn 12 Tháng — 1.200.000đ">Không giới hạn 12 Tháng — 1.200.000đ (HH 10%)</option>
+            <option value="Full Vĩnh Viễn — 2.000.000đ" selected>Full Vĩnh Viễn — 2.000.000đ (HH 10%)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Mã máy (copy trong tab KEY)</label>
+          <input id="hwidInp" type="text" placeholder="VD: 0FA4-2AE2-29B7-C95E" />
+        </div>
+        <div class="field">
+          <label>SĐT / Zalo của bạn</label>
+          <input id="phoneInp" type="text" placeholder="VD: 09xx xxx xxx" />
+        </div>
+        <div class="field">
+          <label>Người giới thiệu (nếu có)</label>
+          <input id="refInp" type="text" placeholder="SĐT người giới thiệu" />
+        </div>
+        <button class="btn-order" type="button" id="copyOrderBtn">📋 Copy Đơn &amp; Mở Zalo</button>
+        <div class="order-out" id="orderOut"></div>
+      </div>
+    </div>
+
+    <div class="section">
       <h2>⚡ Tính năng nổi bật</h2>
       <div class="cards">
         <div class="card">
@@ -218,5 +386,35 @@
       PKAuto • MU Lục Địa VNG • Link tải luôn tự trỏ về bản phát hành mới nhất
     </footer>
   </div>
+  <script>
+    (function () {
+      var cards = document.querySelectorAll('.p-card');
+      var sel = document.getElementById('pkgSel');
+      cards.forEach(function (c) {
+        c.addEventListener('click', function () {
+          cards.forEach(function (x) { x.classList.remove('active'); });
+          c.classList.add('active');
+          sel.value = c.getAttribute('data-pkg');
+        });
+      });
+      document.getElementById('copyOrderBtn').addEventListener('click', function () {
+        var pkg = sel.value;
+        var hw = (document.getElementById('hwidInp').value || '').trim();
+        var ph = (document.getElementById('phoneInp').value || '').trim();
+        var rf = (document.getElementById('refInp').value || '').trim();
+        var msg = 'Mua KEY PKAuto\n- Gói: ' + pkg +
+          '\n- Mã máy: ' + (hw || '(chưa nhập)') +
+          '\n- SĐT: ' + (ph || '(chưa nhập)') +
+          (rf ? ('\n- Người giới thiệu: ' + rf) : '');
+        var out = document.getElementById('orderOut');
+        out.style.display = 'block';
+        out.textContent = 'Đã copy nội dung đơn:\n' + msg.replace(/\n/g, ' | ');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(msg).catch(function () {});
+        }
+        window.open('https://zalo.me/0969455221', '_blank', 'noopener');
+      });
+    })();
+  </script>
 </body>
 </html>
