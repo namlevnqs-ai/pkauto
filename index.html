@@ -446,9 +446,31 @@
               '<div>Chủ tài khoản: <strong>LE PHUONG NAM</strong></div>' +
               '<div>Số tiền: <strong>' + info.price.toLocaleString('vi-VN') + 'đ</strong> (' + pkg + ')</div>' +
               '<div>Nội dung CK: <strong>' + note + '</strong></div>' +
-              '<div style="color:#94a3b8;font-size:12px;margin-top:4px;">Quét bằng MoMo hoặc app Ngân hàng bất kỳ. Giữ nguyên nội dung CK để đối soát nhanh.</div>' +
+              '<div style="color:#94a3b8;font-size:12px;margin-top:4px;">Quét bằng MoMo hoặc app Ngân hàng bất kỳ. Giữ nguyên nội dung CK để hệ thống tự duyệt trong 5 giây.</div>' +
+              '<div style="margin-top:8px;"><button type="button" id="chkPayBtn" style="padding:7px 14px;border:none;border-radius:8px;background:#0284c7;color:#fff;font-weight:700;cursor:pointer;">🔄 Kiểm tra đã nhận KEY chưa</button> <span id="chkPayMsg" style="margin-left:8px;font-size:12.5px;color:#fbbf24;"></span></div>' +
             '</div>' +
           '</div>';
+        var chkBtn = document.getElementById('chkPayBtn');
+        if (chkBtn) {
+          chkBtn.onclick = function () {
+            var msgEl = document.getElementById('chkPayMsg');
+            if (!hwClean || hwClean.length !== 16) { msgEl.textContent = 'Vui lòng nhập đủ Mã máy 16 ký tự ở trên.'; return; }
+            msgEl.textContent = 'Đang kiểm tra...';
+            fetch('https://pkauto-key.namlevnqs.workers.dev/check?hwid=' + encodeURIComponent(hwClean))
+              .then(function (r) { return r.json(); })
+              .then(function (d) {
+                if (d && d.found && d.token) {
+                  msgEl.style.color = '#4ade80';
+                  msgEl.innerHTML = '✅ Đã cấp KEY! Vào game bấm <strong>Kích hoạt</strong> (hoặc copy: <code>' + d.token.slice(0, 28) + '...</code>)';
+                  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(d.token).catch(function () {});
+                } else {
+                  msgEl.style.color = '#fbbf24';
+                  msgEl.textContent = 'Chưa thấy giao dịch mới — chuyển xong đợi ~5 giây rồi bấm lại nhé.';
+                }
+              })
+              .catch(function () { msgEl.textContent = 'Không kết nối được server kiểm tra.'; });
+          };
+        }
       }
 
       cards.forEach(function (c) {
