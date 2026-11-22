@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PKAuto — Auto MU Lục Địa VNG (Miễn Phí)</title>
+  <style>
+    :root {
+      --bg: #080d18;
+      --card: #101829;
+      --border: #23334f;
+      --text: #e8f0fe;
+      --muted: #94a3b8;
+      --gold: #fbbf24;
+      --green: #22c55e;
+      --blue: #38bdf8;
+      --purple: #8b5cf6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, #13213c 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 28px 18px 56px; }
+    .hero {
+      text-align: center;
+      padding: 34px 20px 28px;
+      background: linear-gradient(145deg, rgba(16, 24, 41, 0.94), rgba(11, 17, 30, 0.94));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+    .badge {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #052e16;
+      background: linear-gradient(90deg, #4ade80, #22c55e);
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #fff, var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 650px;
+      margin: 0 auto 24px;
+    }
+    .dl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .btn span.title { font-size: 16px; }
+    .btn span.desc { font-size: 12px; font-weight: 500; opacity: 0.9; margin-top: 3px; }
+    .btn-apk { background: linear-gradient(135deg, #16a34a, #15803d); }
+    .btn-emu { background: linear-gradient(135deg, #0284c7, #0369a1); }
+    .btn-pc  { background: linear-gradient(135deg, #7c3aed, #5b21b6); }
+    .zalo-bar {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn-zalo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: #0068ff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .btn-zalo:hover { background: #0054cc; }
+    .section { margin-top: 26px; }
+    .section h2 {
+      font-size: 19px;
+      margin-bottom: 12px;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .card h3 { font-size: 15px; color: var(--blue); margin-bottom: 6px; }
+    .card p { font-size: 13px; color: var(--muted); }
+    .guide {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .guide ol { padding-left: 18px; font-size: 14px; color: #cbd5e1; }
+    .guide li + li { margin-top: 8px; }
+    code {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--blue);
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-size: 12.5px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      color: #64748b;
+      font-size: 12.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="badge">AUTO MIỄN PHÍ • TỰ ĐỘNG CẬP NHẬT</div>
+      <h1>PKAuto — MU Lục Địa VNG</h1>
+      <p class="sub">
+        Menu nổi trực tiếp trong game cho điện thoại Android &amp; tool quản lý dàn giả lập LDPlayer PC.
+        Săn Boss theo từng tọa độ, đi hoạt động tự động, Chợ &amp; Đấu giá thông minh.
+      </p>
+
+      <div class="dl-grid">
+        <a class="btn btn-apk" href="https://github.com/namlevnqs-ai/pkauto/releases/latest/download/MULucDia_PKAuto.apk">
+          <span class="title">📱 Tải Bản Điện Thoại (.APK)</span>
+          <span class="desc">Cài trực tiếp trên Android • Có sẵn Menu nổi</span>
+        </a>
+        <a class="btn btn-emu" href="https://github.com/namlevnqs-ai/pkauto/releases/latest/download/PKAuto_APK.zip">
+          <span class="title">💻 Tải Tool Giả Lập PC (.ZIP)</span>
+          <span class="desc">Quản lý nhiều LDPlayer • Đồng bộ Auto &amp; Đổi IP</span>
+        </a>
+        <a class="btn btn-pc" href="https://github.com/namlevnqs-ai/pkauto/releases/latest/download/PKAuto.zip">
+          <span class="title">🖥️ Tải Auto PC Độc Lập (.ZIP)</span>
+          <span class="desc">Điều khiển từ máy tính qua ADB</span>
+        </a>
+      </div>
+
+      <div class="zalo-bar">
+        <a class="btn-zalo" href="https://zalo.me/0969455221" target="_blank" rel="noopener">
+          💬 Liên hệ Zalo cấp KEY / Hỗ trợ: 0969 455 221
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>⚡ Tính năng nổi bật</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>🎯 Săn Boss Tọa Độ</h3>
+          <p>Tách từng tọa độ Boss riêng lẻ, ghim map tự bay lại khi relog, tự áp sát &amp; KS Boss PK.</p>
+        </div>
+        <div class="card">
+          <h3>⚔️ Full Hoạt Động</h3>
+          <p>Blood Castle, Devil Square, Boss Mê Cung, Boss Guild, Rồng Tấn Công, 3v3 Liên SV, Công Thành Chiến, Cry Wolf.</p>
+        </div>
+        <div class="card">
+          <h3>📜 Nhiệm Vụ &amp; Dũng Sĩ</h3>
+          <p>Tự chạy NV Chính/Phụ, nhận thưởng hoàn thành, lọc Boss Dũng Sĩ theo map hiện tại.</p>
+        </div>
+        <div class="card">
+          <h3>🛒 Chợ, Rã Đồ &amp; PT</h3>
+          <p>Chỉnh giá Chợ nhanh từng dòng, Đấu Giá, rã đồ theo dòng, lọc chọn tên PT &amp; đổi IP giả lập.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📖 Hướng dẫn cài nhanh</h2>
+      <div class="guide">
+        <ol>
+          <li><strong>Trên điện thoại Android:</strong> Tải file <code>MULucDia_PKAuto.apk</code> ở nút màu xanh lá, mở file để cài đặt (cho phép <em>Cài ứng dụng không rõ nguồn gốc</em> nếu máy hỏi). Vào game mở tab <strong>KEY</strong> bấm <strong>Copy Mã Máy</strong> gửi Zalo để kích hoạt.</li>
+          <li><strong>Trên giả lập LDPlayer (PC):</strong> Tải <code>PKAuto_APK.zip</code>, giải nén rồi mở <code>PKAuto_APK.exe</code> (nếu Windows Defender cảnh báo, chọn <em>More info -&gt; Run anyway</em> hoặc thêm ngoại lệ thư mục).</li>
+          <li><strong>Cập nhật bản mới:</strong> Điện thoại tự tải bản mới ngay trong game (tab <strong>KEY -&gt; Kiểm Tra</strong>); giả lập bấm nút <strong>🚀 Cập Nhật</strong> trên tool.</li>
+        </ol>
+      </div>
+    </div>
+
+    <footer>
+      PKAuto • MU Lục Địa VNG • Link tải luôn tự trỏ về bản phát hành mới nhất
+    </footer>
+  </div>
+</body>
+</html>
