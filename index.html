@@ -241,6 +241,32 @@
       border-radius: 5px;
       font-size: 12.5px;
     }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .preview-card {
+      background: #0a101d;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+    }
+    .preview-card img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+    .preview-card .cap {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
     footer {
       text-align: center;
       margin-top: 32px;
@@ -282,6 +308,20 @@
     </div>
 
     <div class="section">
+      <h2>📸 Giao Diện Auto Trực Tiếp Trong Game</h2>
+      <div class="preview-grid">
+        <div class="preview-card">
+          <img src="auto_main.jpg" alt="Menu Auto chính trong game" loading="lazy" />
+          <div class="cap">Tab Auto Chính • Săn Boss, Train, PK, Chợ &amp; NV</div>
+        </div>
+        <div class="preview-card">
+          <img src="auto_activity.jpg" alt="Tab Hoạt động tự động" loading="lazy" />
+          <div class="cap">Tab Hoạt Động • Devil Square, Blood Castle, Boss Mê Cung...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
       <h2>💎 Bảng Giá &amp; Gói KEY (Test 3 Ngày Miễn Phí)</h2>
       <div class="price-grid" id="pkgGrid">
         <div class="p-card" data-code="TEST" data-price="0" data-pkg="Test 3 Ngày (Miễn phí)">
@@ -295,32 +335,10 @@
           <div class="p-val">30.000đ</div>
           <div class="p-note">1 tháng • 1 nhân vật</div>
         </div>
-        <div class="p-card" data-code="5A" data-price="100000" data-pkg="5 Acc / Tháng — 100.000đ">
-          <div class="p-name">Gói 5 Acc</div>
-          <div class="p-val">100.000đ</div>
-          <div class="p-note">1 tháng • Tối đa 5 acc</div>
-        </div>
         <div class="p-card" data-code="1T" data-price="200000" data-pkg="Không giới hạn 1 Tháng — 200.000đ">
           <div class="p-name">Full 1 Tháng</div>
           <div class="p-val">200.000đ</div>
           <div class="p-note">Không giới hạn nick</div>
-        </div>
-        <div class="p-card" data-code="3T" data-price="400000" data-pkg="Không giới hạn 3 Tháng — 400.000đ">
-          <div class="p-name">Full 3 Tháng</div>
-          <div class="p-val">400.000đ</div>
-          <div class="p-note">Không giới hạn nick</div>
-        </div>
-        <div class="p-card" data-code="6T" data-price="700000" data-pkg="Không giới hạn 6 Tháng — 700.000đ">
-          <div class="p-name">Full 6 Tháng</div>
-          <div class="p-val">700.000đ</div>
-          <div class="p-note">Không giới hạn nick</div>
-          <span class="p-tag">Hoa hồng 10%</span>
-        </div>
-        <div class="p-card" data-code="12T" data-price="1200000" data-pkg="Không giới hạn 12 Tháng — 1.200.000đ">
-          <div class="p-name">Full 12 Tháng</div>
-          <div class="p-val">1.200.000đ</div>
-          <div class="p-note">Không giới hạn nick</div>
-          <span class="p-tag">Hoa hồng 10%</span>
         </div>
         <div class="p-card active" data-code="VV" data-price="2000000" data-pkg="Full Vĩnh Viễn — 2.000.000đ">
           <div class="p-name">Full Vĩnh Viễn</div>
@@ -331,7 +349,7 @@
       </div>
 
       <div class="promo-banner">
-        🎁 <strong>Ưu đãi giới thiệu:</strong> Anh em giới thiệu khách mới nhận ngay <strong>10% hoa hồng</strong> (áp dụng cho các gói từ <strong>6 tháng trở lên</strong>: 6 tháng, 12 tháng, Vĩnh viễn).
+        🎁 <strong>Ưu đãi giới thiệu:</strong> Anh em giới thiệu khách mới nhận ngay <strong>10% hoa hồng</strong> (áp dụng cho gói <strong>Full Vĩnh Viễn</strong>).
       </div>
 
       <div class="order-box">
@@ -340,11 +358,7 @@
           <select id="pkgSel">
             <option value="Test 3 Ngày (Miễn phí)">Test 3 Ngày (Miễn phí)</option>
             <option value="1 Acc / Tháng — 30.000đ">1 Acc / Tháng — 30.000đ</option>
-            <option value="5 Acc / Tháng — 100.000đ">5 Acc / Tháng — 100.000đ</option>
             <option value="Không giới hạn 1 Tháng — 200.000đ">Không giới hạn 1 Tháng — 200.000đ</option>
-            <option value="Không giới hạn 3 Tháng — 400.000đ">Không giới hạn 3 Tháng — 400.000đ</option>
-            <option value="Không giới hạn 6 Tháng — 700.000đ">Không giới hạn 6 Tháng — 700.000đ (HH 10%)</option>
-            <option value="Không giới hạn 12 Tháng — 1.200.000đ">Không giới hạn 12 Tháng — 1.200.000đ (HH 10%)</option>
             <option value="Full Vĩnh Viễn — 2.000.000đ" selected>Full Vĩnh Viễn — 2.000.000đ (HH 10%)</option>
           </select>
         </div>
