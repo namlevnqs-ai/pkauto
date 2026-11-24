@@ -334,26 +334,26 @@
           <div class="p-note">Test full 3 ngày</div>
           <span class="p-tag">Miễn phí</span>
         </div>
-        <div class="p-card" data-code="1A" data-price="30000" data-pkg="1 Acc / Tháng — 30.000đ">
-          <div class="p-name">Gói 1 Acc</div>
+        <div class="p-card" data-code="1A" data-price="30000" data-pkg="30xu — 1 Acc / Tháng">
+          <div class="p-name">30xu</div>
           <div class="p-val">30.000đ</div>
           <div class="p-note">1 tháng • 1 nhân vật</div>
         </div>
-        <div class="p-card" data-code="1T" data-price="200000" data-pkg="Không giới hạn 1 Tháng — 200.000đ">
-          <div class="p-name">Full 1 Tháng</div>
-          <div class="p-val">200.000đ</div>
-          <div class="p-note">Không giới hạn nick</div>
+        <div class="p-card" data-code="1T" data-price="100000" data-pkg="100xu — Full 1 Tuần">
+          <div class="p-name">100xu</div>
+          <div class="p-val">100.000đ</div>
+          <div class="p-note">1 tuần • Không giới hạn nick</div>
         </div>
-        <div class="p-card active" data-code="VV" data-price="2000000" data-pkg="Full Vĩnh Viễn — 2.000.000đ">
-          <div class="p-name">Full Vĩnh Viễn</div>
+        <div class="p-card active" data-code="VV" data-price="2000000" data-pkg="2kxu — Full Vĩnh Viễn">
+          <div class="p-name">2kxu</div>
           <div class="p-val">2.000.000đ</div>
-          <div class="p-note">Không giới hạn nick</div>
+          <div class="p-note">Vĩnh viễn • Không giới hạn</div>
           <span class="p-tag">Hoa hồng 10%</span>
         </div>
       </div>
 
       <div class="promo-banner">
-        🎁 <strong>Ưu đãi giới thiệu:</strong> Anh em giới thiệu khách mới nhận ngay <strong>10% hoa hồng</strong> (áp dụng cho gói <strong>Full Vĩnh Viễn</strong>).
+        🎁 <strong>Ưu đãi giới thiệu:</strong> Anh em giới thiệu khách mới nhận ngay <strong>10% hoa hồng</strong> (áp dụng cho gói <strong>2kxu — Full Vĩnh Viễn</strong>).
       </div>
 
       <div class="order-box">
@@ -361,9 +361,9 @@
           <label>Chọn gói KEY</label>
           <select id="pkgSel">
             <option value="Test 3 Ngày (Miễn phí)">Test 3 Ngày (Miễn phí)</option>
-            <option value="1 Acc / Tháng — 30.000đ">1 Acc / Tháng — 30.000đ</option>
-            <option value="Không giới hạn 1 Tháng — 200.000đ">Không giới hạn 1 Tháng — 200.000đ</option>
-            <option value="Full Vĩnh Viễn — 2.000.000đ" selected>Full Vĩnh Viễn — 2.000.000đ (HH 10%)</option>
+            <option value="30xu — 1 Acc / Tháng">30xu — 1 Acc / Tháng (30.000đ)</option>
+            <option value="100xu — Full 1 Tuần">100xu — Full 1 Tuần (100.000đ)</option>
+            <option value="2kxu — Full Vĩnh Viễn" selected>2kxu — Full Vĩnh Viễn (2.000.000đ · HH 10%)</option>
           </select>
         </div>
         <div class="field">
@@ -425,13 +425,9 @@
     (function () {
       var PKGS = {
         'Test 3 Ngày (Miễn phí)': { code: 'TEST', price: 0 },
-        '1 Acc / Tháng — 30.000đ': { code: '1A', price: 30000 },
-        '5 Acc / Tháng — 100.000đ': { code: '5A', price: 100000 },
-        'Không giới hạn 1 Tháng — 200.000đ': { code: '1T', price: 200000 },
-        'Không giới hạn 3 Tháng — 400.000đ': { code: '3T', price: 400000 },
-        'Không giới hạn 6 Tháng — 700.000đ': { code: '6T', price: 700000 },
-        'Không giới hạn 12 Tháng — 1.200.000đ': { code: '12T', price: 1200000 },
-        'Full Vĩnh Viễn — 2.000.000đ': { code: 'VV', price: 2000000 }
+        '30xu — 1 Acc / Tháng': { code: '1A', price: 30000 },
+        '100xu — Full 1 Tuần': { code: '1T', price: 100000 },
+        '2kxu — Full Vĩnh Viễn': { code: 'VV', price: 2000000 }
       };
       var cards = document.querySelectorAll('.p-card');
       var sel = document.getElementById('pkgSel');
